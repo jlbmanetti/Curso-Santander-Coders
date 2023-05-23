@@ -26,3 +26,4 @@ git pull %Baixa do github e faz um merge automatico
 git fetch %Baixa do github e fica esperando você utilizar diff para comparar as alterações ou pull para o merge
 git diff origin/master %origin é no github, master desktop
 
+Teste de alteracao e commit
