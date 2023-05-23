@@ -17,3 +17,5 @@ git log %Mostra os commits e as mensagens
 
 git restore .\arquivo.txt %Descarta alterações ainda em edit
 git restore --staged .\arquivo.txt %Descarta alterações em staged e volta para edit
+
+git push origin master  %Envia as alterações para o github
