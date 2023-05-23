@@ -1,0 +1,10 @@
+cd = change directory, use to change working directory
+
+% Comandos GIT
+
+git clone https://github.com/jlbmanetti/ALL.git
+
+git init %Cria um git naquele diretório para versionamento
+
+git add .\arquivo.txt % Passa o arquivo de editado para staged
+git diff e git diff --staged % Mostra as alterações no arquivo que está stagged ou editado
