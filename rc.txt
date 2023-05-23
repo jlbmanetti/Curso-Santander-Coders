@@ -22,4 +22,7 @@ git restore --staged .\arquivo.txt %Descarta alterações em staged e volta para
 
 git push origin master  %Envia as alterações para o github
 
-git pull %Envia do github para o desktop
+git pull %Baixa do github e faz um merge automatico
+git fetch %Baixa do github e fica esperando você utilizar diff para comparar as alterações ou pull para o merge
+git diff origin/master %origin é no github, master desktop
+
