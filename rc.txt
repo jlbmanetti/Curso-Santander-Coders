@@ -36,3 +36,14 @@ git merge nome_da_branch %Estando em um branch, você da merge com nome_da_branc
 %% 02.Redes e Sistemas
 
 ipconfig %dados de rede da maquina
+ipconfig /flushdns % limpa o cache de dns
+ping google.com %testa o ping daquela conexão, envia 4 pacotes e mede tempo
+nslookup google.com %procura o endereço ip pelo dns
+tracert google.com %retorna todos os ips intermediários até chegar no google
+route print %
+net stat & visualiza portas sendo utilizadas
+
+cls &clear ALL
+
+O que são portas após o ip?
+
