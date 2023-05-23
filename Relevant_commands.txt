@@ -6,5 +6,14 @@ git clone https://github.com/jlbmanetti/ALL.git
 
 git init %Cria um git naquele diretório para versionamento
 
+% Untracked -->* Staged                 ;* = Stagge
+% Unmodified -->* Modified --> Staged   ;* = Edit
+% Staged -->* Unmodified                ;* = Commit
+% Unmodified -->* Untracked             ;* = Remove
+
 git add .\arquivo.txt % Passa o arquivo de editado para staged
 git diff e git diff --staged % Mostra as alterações no arquivo que está stagged ou editado
+git log %Mostra os commits e as mensagens
+
+git restore .\arquivo.txt %Descarta alterações ainda em edit
+git restore --staged .\arquivo.txt %Descarta alterações em staged e volta para edit
