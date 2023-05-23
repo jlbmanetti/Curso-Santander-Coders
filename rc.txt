@@ -46,4 +46,4 @@ net stat & visualiza portas sendo utilizadas
 cls &clear ALL
 
 O que são portas após o ip?
-
+Cisco Packet Tracker % Programa para criar/testar configurações de rede
