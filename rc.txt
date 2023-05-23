@@ -1,3 +1,5 @@
+%% 01.GIT
+
 cd = change directory, use to change working directory
 
 % Comandos GIT
@@ -26,4 +28,11 @@ git pull %Baixa do github e faz um merge automatico
 git fetch %Baixa do github e fica esperando você utilizar diff para comparar as alterações ou pull para o merge
 git diff origin/master %origin é no github, master desktop
 
-Teste de alteracao e commit
+git branch nome_da_branch %Cria uma nova branch além da master
+git checkout nome_da_branch %Troca o Head para a branch nome_da_branch ao invés da anterior (master)
+git branch %mostra as branchs e também para qual o Head está apontado
+git merge nome_da_branch %Estando em um branch, você da merge com nome_da_branch e ele junta arquivos diferentes, mas pode criar conflitos caso a alteração seja no mesmo arquivo
+
+%% 02.Redes e Sistemas
+
+ipconfig %dados de rede da maquina
