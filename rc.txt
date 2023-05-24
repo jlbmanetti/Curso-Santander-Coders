@@ -1,4 +1,5 @@
 %% 01.GIT
+Utilizar git, github e vsc
 
 cd = change directory, use to change working directory
 
@@ -49,6 +50,7 @@ O que são portas após o ip?
 Cisco Packet Tracker % Programa para criar/testar configurações de rede
 
 %% 03.Conteinerização com Docker
+Utilizar docker desktop e vsc
 
 docker --help % mostra Comandos
 
@@ -96,3 +98,15 @@ docker-compose up -d %up inicia o docer-compose naquele diretorio e -d faz com q
 docker-compose ps %mostra as apis / containers em execução
 docker-compose stop % para os containers, mas nao os Remove
 docker-compose rm -f %remove os containers
+
+%% 0.4 Algoritmos
+
+%Modelo - Teste de uso
+comando no código | saída na tela | armazenamento(todas as var.)
+
+Tipos de dados
+n. inteiro
+n. decimal
+string
+booleano (1 ou 0)
+
