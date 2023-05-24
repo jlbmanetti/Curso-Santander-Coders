@@ -69,3 +69,30 @@ code .\example-course-containers\ % abre outra aba do vsc
 docker imagems % checa as imagens dentro daquele diretório
 docker build -t minha-app:v1 . % controi o docker, precisa estar no diretorio do docker. -t cria um tag para versionamento. "." ao final indica que está nessa mesma pasta
 
+% Volumes em docker servem para armazenar dados durante a execução da aplicação.
+
+cd .. %volta uma pasta
+
+%Aula de link de containers:
+    %banco de dados
+    docker run -e MYSQL_ROOT_PASSWORD=minha-senha --name db -v /app:/var/lib/mysql -d mysql:latest %-e define senha, --name define nome db, -v define volume para guardar dados, -d define a imagem mais recente
+    docker ps %lista os dockers rodando
+
+    %app
+    docker run -e JOOMLA_DB_USER=root -e JOOMLA_DB_PASSWORD=minha-senha --name joomla --link db:mysql -p 8080:80 -d joomla:php8.0 %-e variáveis de ambiente, usuario e senha, --name nome joomla, --link linka com a base db; -p porta utilizada, -d versão utilizado do joomla
+    docker ps
+
+    %Acessando o joomla pelo container id e testando o ping entre ele e o db
+    docker exec -ti 7f6b6c8738aa /bin/bash
+    ping db %esse comando é executado pelo container joomla
+
+traceroute % alternativa ao comando ping, retorna o "ping" de cada pacote enviado em cada etapa
+
+code . %abre o diretório no vsc
+
+$Docker-compose
+
+docker-compose up -d %up inicia o docer-compose naquele diretorio e -d faz com que rode em background (nao mostra infos no prompt e não é encerrado ao fechar o prompt)
+docker-compose ps %mostra as apis / containers em execução
+docker-compose stop % para os containers, mas nao os Remove
+docker-compose rm -f %remove os containers
