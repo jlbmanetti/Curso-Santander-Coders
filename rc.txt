@@ -50,3 +50,22 @@ Cisco Packet Tracker % Programa para criar/testar configurações de rede
 
 %% 03.Conteinerização com Docker
 
+docker --help % mostra Comandos
+
+docker run -ti nginx -p 8081:8081   %ti = terminar interativo
+                                    %run executa a imagem e se não tiver ela faz o pull automatico
+                                    %nginx (?)
+                                    %-p 8081:8081 define a porta que será utilizada por aquele docker
+
+netstat % verifica conexões ip ativas
+
+docker ps -a %lista de containers rodando e finalizado
+
+ls %mostra os files dentro do diretório
+mkdir %cria um novo diretório
+
+code .\example-course-containers\ % abre outra aba do vsc
+
+docker imagems % checa as imagens dentro daquele diretório
+docker build -t minha-app:v1 . % controi o docker, precisa estar no diretorio do docker. -t cria um tag para versionamento. "." ao final indica que está nessa mesma pasta
+
