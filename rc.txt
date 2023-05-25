@@ -1,112 +1,129 @@
-%% 01.GIT
+## 01.GIT
 Utilizar git, github e vsc
 
 cd = change directory, use to change working directory
 
-% Comandos GIT
+# Comandos GIT
 
 git clone https://github.com/jlbmanetti/ALL.git
 
-git init %Cria um git naquele diretório para versionamento
+git init #Cria um git naquele diretório para versionamento
 
-% Untracked --> Staged                 --> = Stage
-% Unmodified --> Modified --> Staged   --> = Edit / Stage
-% Staged --> Unmodified                --> = Commit
-% Unmodified --> Untracked             --> = Remove
+# Untracked --> Staged                 --> = Stage
+# Unmodified --> Modified --> Staged   --> = Edit / Stage
+# Staged --> Unmodified                --> = Commit
+# Unmodified --> Untracked             --> = Remove
 
-git add .\arquivo.txt % Passa o arquivo de untracked ou editado para staged
-git diff e git diff --staged % Mostra as alterações no arquivo que está ou editado ou stagged
+git add .\arquivo.txt #Passa o arquivo de untracked ou editado para staged
+git diff e git diff --staged #Mostra as alterações no arquivo que está ou editado ou stagged
 
 git commit -m "mensagem identificando a alteração"
-git log %Mostra os commits e as mensagens
+git log #Mostra os commits e as mensagens
 
-git restore .\arquivo.txt %Descarta alterações ainda em edit
-git restore --staged .\arquivo.txt %Descarta alterações em staged e volta para edit
+git restore .\arquivo.txt #Descarta alterações ainda em edit
+git restore --staged .\arquivo.txt #Descarta alterações em staged e volta para edit
 
-git push origin master  %Envia as alterações para o github
+git push origin master  #Envia as alterações para o github
 
-git pull %Baixa do github e faz um merge automatico
-git fetch %Baixa do github e fica esperando você utilizar diff para comparar as alterações ou pull para o merge
-git diff origin/master %origin é no github, master desktop
+git pull #Baixa do github e faz um merge automatico
+git fetch #Baixa do github e fica esperando você utilizar diff para comparar as alterações ou pull para o merge
+git diff origin/master #origin é no github, master desktop
 
-git branch nome_da_branch %Cria uma nova branch além da master
-git checkout nome_da_branch %Troca o Head para a branch nome_da_branch ao invés da anterior (master)
-git branch %mostra as branchs e também para qual o Head está apontado
-git merge nome_da_branch %Estando em um branch, você da merge com nome_da_branch e ele junta arquivos diferentes, mas pode criar conflitos caso a alteração seja no mesmo arquivo
+git branch nome_da_branch #Cria uma nova branch além da master
+git checkout nome_da_branch #Troca o Head para a branch nome_da_branch ao invés da anterior (master)
+git branch #mostra as branchs e também para qual o Head está apontado
+git merge nome_da_branch #Estando em um branch, você da merge com nome_da_branch e ele junta arquivos diferentes, mas pode criar conflitos caso a alteração seja no mesmo arquivo
 
-%% 02.Redes e Sistemas
+## 02.Redes e Sistemas
 
-ipconfig %dados de rede da maquina
-ipconfig /flushdns % limpa o cache de dns
-ping google.com %testa o ping daquela conexão, envia 4 pacotes e mede tempo
-nslookup google.com %procura o endereço ip pelo dns
-tracert google.com %retorna todos os ips intermediários até chegar no google
-route print %
-net stat & visualiza portas sendo utilizadas
+ipconfig #dados de rede da maquina
+ipconfig /flushdns #limpa o cache de dns
+ping google.com #testa o ping daquela conexão, envia 4 pacotes e mede tempo
+nslookup google.com #procura o endereço ip pelo dns
+tracert google.com #retorna todos os ips intermediários até chegar no google
+route print
+net stat #visualiza portas sendo utilizadas
 
-cls &clear ALL
+cls #clear ALL
 
 O que são portas após o ip?
-Cisco Packet Tracker % Programa para criar/testar configurações de rede
+Cisco Packet Tracker #Programa para criar/testar configurações de rede
 
-%% 03.Conteinerização com Docker
+## 03.Conteinerização com Docker
 Utilizar docker desktop e vsc
 
-docker --help % mostra Comandos
+docker --help #mostra Comandos
 
-docker run -ti nginx -p 8081:8081   %ti = terminar interativo
-                                    %run executa a imagem e se não tiver ela faz o pull automatico
-                                    %nginx (?)
-                                    %-p 8081:8081 define a porta que será utilizada por aquele docker
+docker run -ti nginx -p 8081:8081   #ti = terminar interativo
+                                    #run executa a imagem e se não tiver ela faz o pull automatico
+                                    #nginx (?)
+                                    #-p 8081:8081 define a porta que será utilizada por aquele docker
 
-netstat % verifica conexões ip ativas
+netstat # verifica conexões ip ativas
 
-docker ps -a %lista de containers rodando e finalizado
+docker ps -a #lista de containers rodando e finalizado
 
-ls %mostra os files dentro do diretório
-mkdir %cria um novo diretório
+ls #mostra os files dentro do diretório
+mkdir #cria um novo diretório
 
-code .\example-course-containers\ % abre outra aba do vsc
+code .\example-course-containers\ #abre outra aba do vsc
 
-docker imagems % checa as imagens dentro daquele diretório
-docker build -t minha-app:v1 . % controi o docker, precisa estar no diretorio do docker. -t cria um tag para versionamento. "." ao final indica que está nessa mesma pasta
+docker imagems #checa as imagens dentro daquele diretório
+docker build -t minha-app:v1 . #controi o docker, precisa estar no diretorio do docker. -t cria um tag para versionamento. "." ao final indica que está nessa mesma pasta
 
-% Volumes em docker servem para armazenar dados durante a execução da aplicação.
+#Volumes em docker servem para armazenar dados durante a execução da aplicação.
 
-cd .. %volta uma pasta
+cd .. #volta uma pasta
 
-%Aula de link de containers:
-    %banco de dados
+#Aula de link de containers:
+    #banco de dados
     docker run -e MYSQL_ROOT_PASSWORD=minha-senha --name db -v /app:/var/lib/mysql -d mysql:latest %-e define senha, --name define nome db, -v define volume para guardar dados, -d define a imagem mais recente
     docker ps %lista os dockers rodando
 
-    %app
+    #app
     docker run -e JOOMLA_DB_USER=root -e JOOMLA_DB_PASSWORD=minha-senha --name joomla --link db:mysql -p 8080:80 -d joomla:php8.0 %-e variáveis de ambiente, usuario e senha, --name nome joomla, --link linka com a base db; -p porta utilizada, -d versão utilizado do joomla
     docker ps
 
-    %Acessando o joomla pelo container id e testando o ping entre ele e o db
+    #Acessando o joomla pelo container id e testando o ping entre ele e o db
     docker exec -ti 7f6b6c8738aa /bin/bash
     ping db %esse comando é executado pelo container joomla
 
-traceroute % alternativa ao comando ping, retorna o "ping" de cada pacote enviado em cada etapa
+traceroute # alternativa ao comando ping, retorna o "ping" de cada pacote enviado em cada etapa
 
-code . %abre o diretório no vsc
+code . #abre o diretório no vsc
 
-$Docker-compose
+#Docker-compose
 
-docker-compose up -d %up inicia o docer-compose naquele diretorio e -d faz com que rode em background (nao mostra infos no prompt e não é encerrado ao fechar o prompt)
-docker-compose ps %mostra as apis / containers em execução
-docker-compose stop % para os containers, mas nao os Remove
-docker-compose rm -f %remove os containers
+docker-compose up -d #up inicia o docer-compose naquele diretorio e -d faz com que rode em background (nao mostra infos no prompt e não é encerrado ao fechar o prompt)
+docker-compose ps #mostra as apis / containers em execução
+docker-compose stop #para os containers, mas nao os Remove
+docker-compose rm -f #remove os containers
 
-%% 0.4 Algoritmos
+## 0.4 Algoritmos
 
 %Modelo - Teste de uso
 comando no código | saída na tela | armazenamento(todas as var.)
 
 Tipos de dados
 n. inteiro
-n. decimal
+n. decimal (float)
 string
 booleano (1 ou 0)
+
+## 0.5 Python
+Utilizar: # para comentário
+Utilizar:
+"""
+Para comentar um trecho de código
+"""
+
+print('texto', var)
+var = input('texto requisição')
+print(type(var)) #verifica o tipo de var int, float, str ou bool
+
+#Operações matemáticas para lembrar:
+// #divisão inteira
+% #resto da divisão
+** #potência
+
 
