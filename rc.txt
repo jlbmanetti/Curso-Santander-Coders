@@ -126,4 +126,59 @@ print(type(var)) #verifica o tipo de var int, float, str ou bool
 % #resto da divisão
 ** #potência
 
+#Operadores booleanos:
+>, <=, ==, !=, >=, > #retorna true ou false
+
+#Conversão de tipo de dados
+int(var) #converte var para inteiro
+str(var) #converte var para string
+float(var) #converte var para float
+bool(var) #converte var para booleano
+
+ctrl + C #Interrompe a execução do código
+
+#Condicionais
+(1)
+if var operador condição: #pode-se utilizar também AND / OR
+    ...
+elif var operador condição:
+    ...
+else:
+    ...
+
+(2) While é útil quando o número de repetições/range não é definido
+while var operador condição: #pode-se utilizar também AND / OR
+    ...
+
+(3) For é útil quando o número de repetições/range é definido
+for i in range(n): #range from 0 to n-1
+    ...
+
+for i in range(0, n): #range from 0 to n-1
+    ...
+
+for i in range(0, n, s): #range from 0 to n-1 by steps of s size
+    ...
+
+Injeta uma variável dentro de uma string:
+f'texto..{var}..texto :' #f antes da string e dentro variável fica entre {}
+
+#Listas
+Lista = [a, b, 2, 5,[a, c, d, e],10, a] #Listas podem ter diferentes tipos de dados e podem ter listas dentro delas
+Lista = list() #converter em lista, será visto futuramente
+
+var1 = Lista[0] #indexação começa sempre no 0;
+varultima = Lista[-1] #retorna o ultimo item da lista
+
+lista_0a2 = Lista[0:3] #retorna o range do índice 0 até o menor que 3
+lista_2aofim = Lista[1:] #retorna o range do índice 1 até o fim
+lista_2aofim = Lista[1:6:2] #retorna o range do índice 1 ao 6 pulando de 2 em 2
+
+len(Lista) #retorna o número de elementos na lista
+
+for i in range(len(Lista)): #percorrerá toda a lista
+    print(Lista[i])
+
+for i in Lista: #percorrerá toda a lista
+    print(i)
 
