@@ -113,9 +113,9 @@ booleano (1 ou 0)
 ## 0.5 Python
 Utilizar: # para comentário
 Utilizar:
-"""
+'''
 Para comentar um trecho de código
-"""
+'''
 
 print('texto', var)
 var = input('texto requisição')
@@ -181,4 +181,41 @@ for i in range(len(Lista)): #percorrerá toda a lista
 
 for i in Lista: #percorrerá toda a lista
     print(i)
+
+#Comandos com listas
+lista.append(var) #adicionar var ao final da lista
+lista.insert(pos,var) #adiciona var na posicao pos da lista
+lista.extend(lista2) #concatena a lista 2 à lista 1
+lista.pop(pos) #remove a var na posição pos, se não expecificado remove o último termo
+lista.remove(var) #remove sempre a primeira var=var na lista
+lista.count(var) #conta o número de vars=var na lista
+lista.index(var) #retorna a posição da var
+lista.sort() #ordena a lista em ordem crescente ou decrescente (reverse=true)
+
+len(lista) #número de elementos na lista
+sum(lista) #soma todos os elementos da lista
+max(lista) #var máxima na lista
+min(lista) #var mínima na lista
+
+#criando funções
+def nome_da_funcao(var,var2='Python course'):
+    print(f'Hello, {var}!')
+    print(f'Your welcome to our {var2}')
+
+def soma(num1,num2):
+    return num1+num2 #return sempre define o valor como resultado da função e encerra a função
+
+#Dicionários - funcionam para associar fortemente valores com respectivas chaves (funciona em pares)
+dicionário = {}
+dicionário = dict()
+dicionário = {'nome':'claudio','idade':20}
+idade = dicionário['idade'] #acessa-se o valor pela chave
+dicionário['altura']=1.80 #como não existe essa chave no dicionário ele fará o 'append'; caso já exista, ele sobrescreve
+
+for var in dicionário: #a variável sempre vai percorrer a chave do dicionário
+    print(var) #imprime as chaves
+    print(var,dicionário[chave]) #imprime a chave e o valor
+
+chave in dicionário #retorna true ou false
+
 
