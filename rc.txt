@@ -218,4 +218,74 @@ for var in dicionário: #a variável sempre vai percorrer a chave do dicionário
 
 chave in dicionário #retorna true ou false
 
+## 0.5 Banco de dados
+
+20 tipos de dados, deles:
+-numeric #smallint, int, bigint, decimal
+-texto #varchar (limite definido), char (n especifico), text (variavel infinito)
+-data #date (padrao dia,mes, ano), outros tipos dão segundo/minuto/hora e fuso
+-booleano #1 tipo
+
+Diagrama de entidade e relacionamento - utilizando Visual Paradigm Online
+primary key, foreign key #
+one to one, one to many, many to many #relacionamentos
+normalização de dados #pela aula, parece ser simplesmente bom senso em reduzir redundâncias na base, separando os dados sempre que necessário
+dsads
+
+#Comandos no PostgresSQL
+create table tabela_professor( #cria a tabela ao executar a query
+	id_professor integer, #nome da tabela e tipo de dado
+	celular varchar(15),
+	nome varchar(40),
+	id_disciplina integer,
+	primary key (id_professor), #define a chave primária
+	foreign key (id_disciplina) #define a chave estrangeira
+	references tabela_disciplina(id_disciplina) #referencia de qual tabela a chave estrangeira vem
+)
+
+insert into tabela_disciplina values #insere valores em uma tabela
+(1, 'português','ementa português'), #registro com o formato da tabela criada (id, disciplina, ementa)
+(2, 'física','ementa física'),
+(3, 'matemática','ementa matemática');
+
+select * from tabela_disciplina #mostra os dados da tabela_disciplina
+
+F5 roda a query
+
+copy tabela_disciplina(id_disciplina, nome, ementa) #copiar dados para a tabela de um arquivo csv
+from 'C:\Program Files\PostgreSQL\14\arquivo.csv' #local do arquivo, postgres precisa ter acesso à essa pasta
+delimiter ',' #o que separa as colunas
+csv header #elimina a primeira linha
+
+update tabela_disciplina set nome = 'física alterado' #aqui coloca-se o novo valor
+where id_disciplina = 5 #especifica-se a referência de qual linha será alterado
+
+delete from tabela_disciplina #remove a linha
+where id_disciplina = 6 #especifica-se qual linha será removida
+
+#em ambos os casos acima (update e delete), se não for especificado pelo where ele aplicará/removerá toda a tabela
+
+#considerando aspectos de LGPD e segurança dos dados, é possível criar classes de perfis para acesso ao db
+
+create view matricula_com_sigilo as   #criará uma máscara sobre a tabela especificada abaixo somente com os dados desejados
+(
+    select
+        id_matricula, 
+        nome                  #não pode ter virgula antes do from
+    from tabela_disciplina
+)
+
+-- #comenta código na query
+
+create index indice_nome on tabela_disciplina(nome) #cria um índice nesta tabela para a coluna nome de forma que o algorítimo de busca faça buscas mais rápidas
+#downside de indices é que toda vez que um dado é adicionado na tabela ele terá que refazer o índice, gerando lentidão. Bom para tabelas com pouca alteração.
+
+#data deve ser inserido entre aspas
+
+## 0.6 Cloud computing
+
+Imagem muito legal diferenciando On-site, IaaS, PaaS e SaaS. Progressivamente passando as tasks para a cloud. SaaS é full cloud.
+IaaS - infrastructure as a service # infra, exemplo AWS EC2
+PaaS - platform as a service # infra+plataforma, exemplo 
+SaaS - software as a service # infra+plataforma+software, exemplo 
 
