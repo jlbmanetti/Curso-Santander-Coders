@@ -1,3 +1,4 @@
+#Santander Coders 2023 - Módulo inicial, processo seletivo
 ## 01.GIT
 Utilizar git, github e vsc
 
@@ -288,4 +289,43 @@ Imagem muito legal diferenciando On-site, IaaS, PaaS e SaaS. Progressivamente pa
 IaaS - infrastructure as a service # infra, exemplo AWS EC2
 PaaS - platform as a service # infra+plataforma, exemplo 
 SaaS - software as a service # infra+plataforma+software, exemplo 
+
+Detalhes AWS:
+IAM - Gerenciador de usuários/permissões em cloud
+
+Considerar:
+-latência
+-LGPD de cada país
+-custos
+-oferta de serviços
+
+Configurar alerta de custo/fatura #Cloudwatch
+Configurar usuários e contas #IAM
+-1 conta somente para ser o host do AWS
+-1 conta com quase os mesmos privilégios para desenvolver (redundância na segurança)
+
+Role - Ao criar a EC2 você deve definir a role (conjuntos de permissões da sua EC2)
+
+EC2 - Instâncias - Executar nova insctância
+
+RDS - Relational database
+DynamoDB - Banco nosql
+S3 - armazenamento de qualquer arquivo (drive)
+
+Autoscaling #tipo de criação das instâncias EC2 que automaticamente irá escalar os recursos físicos de acordo com a demanda
+
+AWS FIS - Simulador de falhas/stress
+
+IaaC #infrastructure as a code, faz as configs de criar uma ou várias EC2s a partir de código e não dos paineis de config na aws
+
+Cloud formation, stacks, upload do json ou yml com o codigo IaaC #permite versionamento, auditoria e compartilhar a infra
+
+CI/CD - Continuous integration and delivery
+
+Code deploy - executa um pipeline #é necessário atualizar a role com as permissões de deploy
+
+----------------------------------------
+##Side work
+
+Imutable vs Mutable type #str, int, float, bool, bytes e tuple são imutaveis, enquanto list, set, dict e outros são alias (referencias).
 
