@@ -329,3 +329,12 @@ Code deploy - executa um pipeline #é necessário atualizar a role com as permis
 
 Imutable vs Mutable type #str, int, float, bool, bytes e tuple são imutaveis, enquanto list, set, dict e outros são alias (referencias).
 
+
+__________________________________________________________________________________________________________________________________________________________________________
+
+COMEÇO CO CURSO REGULAR
+
+Aula 1
+Tuplas são imutaveis
+
+Para utilizar o sorted() é necessário transformar tuplas em listas
