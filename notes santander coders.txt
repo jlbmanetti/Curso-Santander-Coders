@@ -338,3 +338,43 @@ Aula 1
 Tuplas são imutaveis
 
 Para utilizar o sorted() é necessário transformar tuplas em listas
+
+Aula 2
+
+
+Aula 3
+
+Utilidade de list_comprehension: cria variáveis locais e já gera a lista com base na expressão demanda
+
+exemplo
+quadrados_List_Comprehension = [ i**2 for i in range (1,11)] #cria uma lista em que cada elemento será o resultado da operação i^2 para i no range de 1 a 10
+
+#modelos de condicionais:
+(1)
+
+lista = [expressao for item in colecao]
+
+# equivale a:
+for item in colecao:
+    lista.append(expressao)
+
+(2)
+
+[expressao for item in colecao if condicao]
+
+# equivale a:
+for item in colecao:
+    if condicao:
+        lista.append(expressao)
+
+(3)
+[expressao if condicao else expressao_alternativa for item in colecao] 
+
+# equivale a:
+for item in colecao:
+    if condicao:
+        lista.append(expressao)
+    else:
+        lista.append(expressao_alternativa)
+
+Parei aula @46:00
