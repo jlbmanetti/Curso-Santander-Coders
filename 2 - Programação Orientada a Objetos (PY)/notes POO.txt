@@ -1,0 +1,8 @@
+Paradigmas de programação
+
+1 - imperativo (nao entendi direito)
+2 - Funcional - Função tem as suas variáveis limitadas ao escopo da função (não passa essas variáveis para o restante do código)
+3 - POO - Classes, encapsulam comportamentos, mantém as variáveis
+
+Quando não é necessário o estágio anterior a função é boa, quando você precisa de informações de estado, POO é melhor.
+
