@@ -99,6 +99,22 @@ anonymous_usage_statistics:
 fluent_datasources:
   postgresql_datasource:
     type: postgres
+    assets:
+      calendar_bronze:
+        type: query
+        order_by: []
+        batch_metadata: {}
+        query: "SELECT * FROM public.calendar_bronze\n    LIMIT 100"
+      reviews_bronze:
+        type: query
+        order_by: []
+        batch_metadata: {}
+        query: "SELECT * FROM public.reviews_bronze\n    LIMIT 100"
+      listing_bronze:
+        type: query
+        order_by: []
+        batch_metadata: {}
+        query: "SELECT * FROM public.listing_bronze\n    LIMIT 100"
     connection_string: postgresql+psycopg2://postgres:22091102@localhost:5433/postgres
 notebooks:
 include_rendered_content:
